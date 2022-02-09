@@ -27,8 +27,9 @@ class SplashScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val viewModelProvider = SplashScreenViewModelFactory(3000L)
         viewModel =
-            ViewModelProvider(this).get(SplashScreenViewModel::class.java)
+            ViewModelProvider(this, viewModelProvider).get(SplashScreenViewModel::class.java)
         viewModel.exitStatus.observe(
             viewLifecycleOwner,
             Observer {

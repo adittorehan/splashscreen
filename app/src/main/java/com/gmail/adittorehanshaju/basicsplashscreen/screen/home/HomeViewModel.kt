@@ -5,11 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
-    private var _splashScreen = true
-    val splashScreen
-        get() = _splashScreen
+    var splashScreen = true
 
-    fun splashScreenStatus() {
-        _splashScreen = false
+    fun splashCompleted() {
+        splashScreen = false
     }
 }

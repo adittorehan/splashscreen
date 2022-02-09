@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 
-class SplashScreenViewModel : ViewModel() {
+class SplashScreenViewModel(splashTime: Long) : ViewModel() {
 
     private val _exitStatus = MutableLiveData<Boolean>()
     val exitStatus: LiveData<Boolean>
@@ -16,7 +16,7 @@ class SplashScreenViewModel : ViewModel() {
 
     init {
         _exitStatus.value = false
-        timer = object : CountDownTimer(3000L, 1000L) {
+        timer = object : CountDownTimer(splashTime, 1000L) {
             override fun onTick(millisUntilFinished: Long) {}
 
             override fun onFinish() {

@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
                 HomeFragmentDirections
                     .actionHomeToSplashScreen()
             )
-        viewModel.splashScreenStatus()
+        viewModel.splashCompleted()
     }
 
 
